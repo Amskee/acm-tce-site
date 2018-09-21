@@ -1,0 +1,11 @@
+.tabs .indicator {
+	background-color: #000;
+}
+
+.display-front {
+	z-index: 999;
+}
+
+.hero-container {
+	background-image:url('./img/bg6.jpg');
+}
