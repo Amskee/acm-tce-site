@@ -10,6 +10,91 @@
 	background-image:url('./img/bg6.jpg');
 }
 
+.section-head {
+	margin-top: 30px;
+}
+
+.section-hero {
+	font-size: 32px;
+	color: black;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 700;
+	margin-bottom: 5px;
+}
+
+.section-desc {
+	text-align: center;
+	color: #999;
+	margin-bottom: 30px;
+}
+
+.card-head {
+	font-weight: 900;
+	text-align: center;
+}
+
+.activity-icon {
+	position: absolute;	
+	margin-left: -moz-calc(50% - 30px);
+	margin-left: -webkit-calc(50% - 30px);
+	margin-left: -o-calc(50% - 30px);
+	margin-left: calc(50% - 30px);
+	margin-right: -moz-calc(50% - 30px);
+	margin-right: -webkit-calc(50% - 30px);
+	margin-right: -o-calc(50% - 30px);
+	margin-right: calc(50% - 30px);
+	right: 0 !important;
+	box-shadow: 0;
+	border: 5px solid white;
+	box-sizing: content-box;
+	width: 50px;
+	height: 50px;
+	line-height: 50px !important;
+	top: -30px !important;
+}
+
+.no-shadow {
+	box-shadow: none;
+}
+
+.card-content2 {
+	background-color: #fafafa;
+	border: 1px solid #e6e6e6;
+	height: 200px;
+	padding-top: 30px;
+}
+
+.custom-icon {
+	line-height: 50px !important;
+	font-size: 2.0rem !important;
+}
+
 .carousel .carousel-item{
-		opacity:1 !important;
-	}
+	opacity:1 !important;
+}
+
+/*Animated gradient text
+*/
+
+.text-gradient {
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-size: 2rem;
+	font-weight:  100;
+	color: #e9ed2d;
+	background-image: -webkit-linear-gradient(92deg, #e9ed2d, #ffffff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-animation: hue 10s infinite linear;
+}
+
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
+
+
