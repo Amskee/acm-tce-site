@@ -199,6 +199,7 @@ function removeOverlay() {
 		$(document).ready(function(){
 		
 			//checkContainer();
+			//$('#bbt').css('');
 			viewcount();
 			viewlike('1');
 			$('.tabs').tabs({duration:100,});
