@@ -1,5 +1,78 @@
 var currentTimeout = null;
-
+function viewlike(typ)
+{
+	$.ajax({
+			type:'POST',
+			url:'php/views.php',
+			data:{'id':'2','type':typ},
+			cache:false,
+			success:function(html){
+				var res=html;
+				$('#likes').text(res);
+			}
+		});
+}
+	$('#like').click(function(){
+			viewlike('0');
+		});
+	function viewcount()
+	{
+		//alert('camee');
+		$.ajax({
+			type:'POST',
+			url:'php/views.php',
+			data:{'id':'1','type':'0'},
+			cache:false,
+			success:function(html){
+				var res=html + " viewers";
+				$('#view').text(res);
+			}
+		});
+	}
+	$("#eve,#eve1").click(function(){
+		var d=$('#track1').offset();
+		$("html,body").animate({scrollTop : d.top-90},700);
+	});
+	$("#bbt,#home").click(function(){
+		$("html,body").animate({scrollTop : 0},700);
+	});
+	$(window).scroll(function(){
+		var d=$('#ch1').offset();
+		if($(window).scrollTop()+$(window).height()>d.top)
+		{
+			var i=0;
+			var ee=setInterval(function(){
+			if(i<230)
+			$("#ch1").text(i++);
+			else
+			clearInterval(ee);
+			},10);
+			
+			var j=0;
+			var ee=setInterval(function(){
+			if(j<100)
+			$("#ch2").text(j++);
+			else
+			clearInterval(ee);
+			},10);
+			
+			var k=0;
+			var ee=setInterval(function(){
+			if(k<540)
+			$("#ch3").text(k++);
+			else
+			clearInterval(ee);
+			},0.5);
+			
+			var l=0;
+			var ee=setInterval(function(){
+			if(l<30)
+			$("#ch4").text(l++);
+			else
+			clearInterval(ee);
+			},10);
+		}
+	});
 function autoplayCarousel() {
 	currentTimeout = setTimeout(autoplay, 4500);;
 	function autoplay() {
@@ -97,6 +170,13 @@ function removeOverlay() {
 		else{
 			$("#hed").css("background" , "");
 		}
+		if($(window).scrollTop()<100)
+		{
+			$('#bbt').fadeOut();
+		}
+		else{
+			$('#bbt').fadeIn();
+		}
 	});
 	
 	function createmodal(){
@@ -119,14 +199,16 @@ function removeOverlay() {
 		$(document).ready(function(){
 		
 			//checkContainer();
+			viewcount();
+			viewlike('1');
 			$('.tabs').tabs({duration:100,});
 			filldata();
 			if($(window).width()<1000){
 			
 			$("#hed #desk").hide();
 			//alert('hii');
-			//var txt="<div class='col l6'><p style='color:red;'>hii</p></div>";
-			var txt1="<div class='col l4'><br><a style='color:white' id='sidenav' href='#' data-activates='slide-out' class='button-collapse'><i class='material-icons'>menu</i></a></div>";
+			//var txt="<div class='col l6 s6'><p style='color:red;'>hii</p></div>";
+			var txt1="<div class='col l4 s6'><br><a style='color:white;float:right;' id='sidenav' href='#' data-activates='slide-out' class='button-collapse'><i class='material-icons'>menu</i></a></div>";
 			$("#hed #legend").after(txt1);
 			createmodal();
 			//$("p").css("background-color","red");
@@ -136,12 +218,13 @@ function removeOverlay() {
 		
 			if($(window).width()<1000){
 			$("#hed #desk").hide();
-			//var txt="<div class='col l6'><p style='color:red;'>hii</p></div>";
-			var txt1="<div id='desk1'class='col l4'><br><a style='color:white' id='sidenav' href='' data-activates='slide-out' class='button-collapse'><i class='material-icons'>menu</i></a></div>";
+			//var txt="<div class='col l6 s6'><p style='color:red;'>hii</p></div>";
+			var txt1="<div id='desk1'class='col l4 s6'><br><a style='color:white;float:right' id='sidenav' href='' data-activates='slide-out' class='button-collapse'><i class='material-icons'>menu</i></a></div>";
 			if(!$("#hed #desk1").length ){
 			$("#hed #legend").after(txt1);}
 			else if($("#hed #desk1").length && $("#hed #desk1").css("display")=='none'){
 				$("#hed #desk1").show();
+				//$("#hed #legend").after(txt1);
 			}
 			createmodal();
 			//$("p").css("background-color","red");
