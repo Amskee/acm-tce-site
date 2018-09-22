@@ -36,17 +36,21 @@ function viewlike(typ)
 	$("#bbt,#home").click(function(){
 		$("html,body").animate({scrollTop : 0},700);
 	});
+	var eee=0;
 	$(window).scroll(function(){
 		var d=$('#ch1').offset();
-		if($(window).scrollTop()+$(window).height()>d.top)
+		var dd=Math.abs($(window).scrollTop()+$(window).height()-d.top);
+		//salert(dd);
+		if(dd>=0 && dd<=10 && eee==0)
 		{
+			eee=1;
 			var i=0;
 			var ee=setInterval(function(){
 			if(i<230)
 			$("#ch1").text(i++);
 			else
 			clearInterval(ee);
-			},10);
+			},1);
 			
 			var j=0;
 			var ee=setInterval(function(){
@@ -54,7 +58,7 @@ function viewlike(typ)
 			$("#ch2").text(j++);
 			else
 			clearInterval(ee);
-			},10);
+			},1);
 			
 			var k=0;
 			var ee=setInterval(function(){
@@ -62,7 +66,7 @@ function viewlike(typ)
 			$("#ch3").text(k++);
 			else
 			clearInterval(ee);
-			},0.5);
+			},0.1);
 			
 			var l=0;
 			var ee=setInterval(function(){
@@ -70,7 +74,7 @@ function viewlike(typ)
 			$("#ch4").text(l++);
 			else
 			clearInterval(ee);
-			},10);
+			},1);
 		}
 	});
 function autoplayCarousel() {
