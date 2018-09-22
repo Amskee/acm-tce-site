@@ -29,9 +29,15 @@ function viewlike(typ)
 			}
 		});
 	}
+	//Events scroll
 	$("#eve,#eve1").click(function(){
 		var d=$('#track1').offset();
 		$("html,body").animate({scrollTop : d.top-90},700);
+	});
+	//Explore scroll
+	$("#exp").click(function(){
+		var d=$('.activity-container').offset();
+		$("html,body").animate({scrollTop : d.top-150},700);
 	});
 	$("#bbt,#home").click(function(){
 		$("html,body").animate({scrollTop : 0},700);
@@ -72,7 +78,23 @@ function viewlike(typ)
 			clearInterval(ee);
 			},10);
 		}
+
+		$('.scroll-animations .animated').each(function() {
+			if (isScrolledIntoView(this) === true) {
+				$(this).addClass('fadeInUp');
+			}
+		});
+
 	});
+
+function isScrolledIntoView(elem) {
+	var docViewTop = $(window).scrollTop();
+	var docViewBottom = docViewTop + $(window).height();
+	var elemTop = $(elem).offset().top;
+	var elemBottom = elemTop + $(elem).height();
+	return ((elemBottom-200 <= docViewBottom) && (elemTop-200 >= docViewTop));
+}
+
 function autoplayCarousel() {
 	currentTimeout = setTimeout(autoplay, 4500);;
 	function autoplay() {
@@ -197,6 +219,14 @@ function removeOverlay() {
 	
 	}
 		$(document).ready(function(){
+
+			//Activity Fade In
+			$('.scroll-animations .animated').each(function() {
+				if (isScrolledIntoView(this) === true) {
+					$(this).addClass('fadeInUp');
+				}
+			});
+			//Activity Fade In Ends
 		
 			//checkContainer();
 			//$('#bbt').css('');
@@ -241,3 +271,21 @@ $("#event-tabs").click(function() {
 	$('.carousel').carousel('next');
 	autoplayCarousel();
 });
+
+var iconColor = activityData["color"];
+
+for(var key in activityData) {
+	if(key=="color") continue;
+	var row = activityData[key];
+	$(".activity-container").append(dataRow.replace("%rid%", key));
+	console.log("Appending data row");
+	row.forEach(function(card) {
+		//currentRow = $(".activity-row:last");
+		formattedData = dataCard.replace("%data-icon%", card.icon);
+		formattedData = formattedData.replace("%icon-color%", iconColor);
+		formattedData = formattedData.replace("%data-title%", card.title);
+		formattedData = formattedData.replace("%data-desc%", card.desc);
+		$("#"+key).append(formattedData);
+		console.log("Appending card");
+	})
+}
