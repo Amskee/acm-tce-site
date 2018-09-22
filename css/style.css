@@ -9,3 +9,7 @@
 .hero-container {
 	background-image:url('./img/bg6.jpg');
 }
+
+.carousel .carousel-item{
+		opacity:1 !important;
+	}
