@@ -244,6 +244,10 @@ function removeOverlay() {
 			createmodal();
 			//$("p").css("background-color","red");
 			}
+
+			initTeam();
+			//initGallery
+			$("#gallery").unitegallery(); 
 		});
 		$(window).resize(function(){
 		
@@ -289,3 +293,54 @@ for(var key in activityData) {
 		console.log("Appending card");
 	})
 }
+
+var teamSlider = $(".team-slider");
+
+teamData.forEach(function(member) {
+	formattedData = memberCard.replace("%data-img%", member.image);
+	formattedData = formattedData.replace("%data-name%", member.name);
+	formattedData = formattedData.replace("%data-desc%", member.desc);
+	teamSlider.append(formattedData);
+});
+
+var gallery = $("#gallery");
+for(var i=1;i<=14;i++) {
+	var imgUrl = "m"+i+".JPG";
+	var formattedData = galleryItem.replace("%img-url%", imgUrl).replace("%img-url%", imgUrl);
+	gallery.append(formattedData);
+}
+
+function initTeam() {
+	$('.team-slider').slick({
+		autoplay: true,
+		autoplaySpeed: 2000,
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		responsive: [
+			{
+		    	breakpoint: 1024,
+		    	settings: {
+		    	  slidesToShow: 3,
+		    	  slidesToScroll: 1
+		    	}
+			},
+			{
+				breakpoint: 600,
+				settings: {
+				  slidesToShow: 2,
+				  slidesToScroll: 1,
+				}
+			},
+			{
+				breakpoint: 480,
+				settings: {
+				  slidesToShow: 1,
+				  slidesToScroll: 1,
+				}
+			}
+		]
+	});
+
+}
+
+

@@ -4,7 +4,13 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href="css/materialize.min.css">
 		<link rel="stylesheet" href="css/style.css">
+		<!--Libraries-->
 		<link rel="stylesheet" href="css/animate.min.css">
+		<link rel="stylesheet" href="lib/slick/slick.css"/>
+		<link rel="stylesheet" href="lib/slick/slick-theme.css"/>		
+		<link rel='stylesheet' href="lib/unitegallery/css/unite-gallery.css"/> 
+		<link rel='stylesheet' href="lib/unitegallery/themes/default/ug-theme-default.css"/> 
+		<!--Libraries end-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	</head>
 	<body>
@@ -116,6 +122,23 @@
 			<div id="test4" class="col s12"></div>
 		</div>
 	</div>
+
+	<!--Gallery start-->
+	<div class="container">
+		<div class="row">
+			<div class="section-head">
+				<h3 class="section-hero">Gallery</h3>
+				<p class="section-desc">Glorious moments from past ACM Activities</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col m8 offset-m2 s10 offset-s1">
+				<div id="gallery" style="display:none;">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Gallery end-->
 	
 	<div id="fact" class="container " style="margin-top:20px;">
 		<center><b><h4 style="padding-top:20px;">FACTS</h4></b></center>
@@ -150,6 +173,54 @@
 			</div>
 		</div>
 	</div>
+
+	<!--Team start-->
+	<div class="container">
+		
+		<div class="row">
+			<div class="section-head">
+				<h3 class="section-hero">Team</h3>
+				<p class="section-desc">Faculty and Office bearers of TCE ACM Chapter</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s10 offset-s1">
+				<div class="card-set" style="margin: 5px;">
+					<div class="faculty-card col m3 s6">
+						<div class="member-image acm-f1">
+							<div class="card-arrow"></div>
+						</div>
+					</div>
+					<div class="faculty-card card-desc col m3 s6">
+						<h5 class='card-head top-margin'>Sheik Abdullah</h5>
+						<p class='card-desc center-align'>Faculty Co-ordinator</p>
+					</div>
+				</div>
+
+				<div class="card-set" style="margin: 5px;">
+					<div class="faculty-card acm-f2 member-image col m3 s6">
+						<div class="card-arrow"></div>
+					</div>
+					<div class="faculty-card card-desc col m3 s6">
+						<h5 class='card-head top-margin'>Suganya</h5>
+						<p class='card-desc center-align'>Faculty Co-ordinator</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<p class="section-desc margin-cut">Office bearers</p>
+		</div>
+
+		<div class="row">
+			<div class="col s10 offset-s1">
+				<div class="team-slider"></div>
+			</div>
+		</div>
+
+	</div>
+	<!--Team End-->
 	<div style="background-color:black;margin-bottom:-20px;color:white;">
 		<div class="row">
 			<div class="col l6 s12 offset-l1 m6">
@@ -226,6 +297,9 @@
 	<script src="js/materialize.min.js"></script>
 	<script src="js/helper.js" defer></script>
 	<script src="js/pageBuilder.js" defer></script>
+	<script src="lib/slick/slick.min.js"></script>
+	<script src='lib/unitegallery/js/unitegallery.min.js'></script> 
+	<script src='lib/unitegallery/themes/default/ug-theme-default.js'></script> 
 
 </body>
 </html>

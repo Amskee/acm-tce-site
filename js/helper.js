@@ -32,6 +32,34 @@ var activityData = {
 	]
 }
 
+var teamData = [
+	{
+		image: "member.png",
+		name: "Gokul Karthik",
+		desc: "Chair person"
+	},
+	{
+		image: "member.png",
+		name: "Amrish Kumar",
+		desc: "Web Master"
+	},
+	{
+		image: "member.png",
+		name: "Naveen Kumar",
+		desc: "Web Master"
+	},
+	{
+		image: "member.png",
+		name: "Lorem Ipsum",
+		desc: "Dolor"
+	},
+	{
+		image: "member.png",
+		name: "Ken Adams",
+		desc: "Member"
+	}
+];
+
 var dataRow = "<div class='row scroll-animations activity-row' id='%rid%'></div>";
 var dataCard = "<div class='card col m4 s12 no-shadow animated'>"+
 				"<div class='card-image'>"+
@@ -39,4 +67,14 @@ var dataCard = "<div class='card col m4 s12 no-shadow animated'>"+
 				"<i class='material-icons custom-icon'>%data-icon%</i></a></div>"+
 				"<div class='card-content2'>"+
 				"<h5 class='card-head'>%data-title%</h5>"+
-				"<p class='card-desc center-align'>%data-desc%</p></div></div>";
+				"<p class='center-align' style='padding: 10px;'>%data-desc%</p></div></div>";
+
+var memberCard = "<div class='card member-card'><div class='card-image'>"+
+				"<div class='member-image' style=\"background-image:url('./img/team/%data-img%')\"/></div>"+
+				"<div class='card-content member-content'><div class='row center-align'>"+
+				"<div class='member-name'>%data-name%</div>"+
+				"<div class='member-desc'>%data-desc%</div>"+
+				"</div></div></div>";
+
+var galleryItem = "<img src='img/gallery/%img-url%' data-image='img/gallery/%img-url%'>";
+				
