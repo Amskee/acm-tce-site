@@ -42,29 +42,32 @@ function viewlike(typ)
 	$("#bbt,#home").click(function(){
 		$("html,body").animate({scrollTop : 0},700);
 	});
+	var eee=0;
 	$(window).scroll(function(){
 		var d=$('#ch1').offset();
-		if($(window).scrollTop()+$(window).height()>d.top)
+		var dd=Math.abs($(window).scrollTop()+$(window).height()-d.top);
+		if(dd>=0 && dd<=50 && eee==0)
 		{
 			var i=0;
+			eee=1;
 			var ee=setInterval(function(){
-			if(i<230)
+			if(i<=230)
 			$("#ch1").text(i++);
 			else
 			clearInterval(ee);
-			},10);
+			},8);
 			
 			var j=0;
 			var ee=setInterval(function(){
-			if(j<100)
+			if(j<=100)
 			$("#ch2").text(j++);
 			else
 			clearInterval(ee);
-			},10);
+			},20);
 			
 			var k=0;
 			var ee=setInterval(function(){
-			if(k<540)
+			if(k<=540)
 			$("#ch3").text(k++);
 			else
 			clearInterval(ee);
@@ -72,11 +75,11 @@ function viewlike(typ)
 			
 			var l=0;
 			var ee=setInterval(function(){
-			if(l<30)
+			if(l<=30)
 			$("#ch4").text(l++);
 			else
 			clearInterval(ee);
-			},10);
+			},15);
 		}
 
 		$('.scroll-animations .animated').each(function() {
